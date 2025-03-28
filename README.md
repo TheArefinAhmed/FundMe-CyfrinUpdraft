@@ -1,6 +1,6 @@
 ## FundMe
 
-** This is the FundMe project from Cyfrin Updraft**
+**This is the FundMe project from Cyfrin Updraft**
 
 Foundry consists of:
 
