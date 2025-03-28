@@ -2,13 +2,15 @@
 
 pragma solidity 0.8.19;
 
-import {Test, console} from "forge-std/Test.sol";
+import {Test, console} from "lib/foundry-devops/lib/forge-std/src/Test.sol";
 import {ZkSyncChainChecker} from "lib/foundry-devops/src/ZkSyncChainChecker.sol";
 import {FoundryZkSyncChecker} from "lib/foundry-devops/src/FoundryZkSyncChecker.sol";
 
+// /home/cookie/Documents/foundryPatrickAlpha/foundry-fund-me-f23/lib/foundry-devops/src/ZkSyncChainChecker.sol
+
 contract ZkSyncDevOps is Test, ZkSyncChainChecker, FoundryZkSyncChecker {
     // Remove the `skipZkSync`, then run `forge test --mt testZkSyncChainFails --zksync` and this will fail!
-    function testZkSyncChainFails() public skipZkSync {
+    function testZkSyncChainFails() public onlyZkSync {
         address ripemd = address(uint160(3));
 
         bool success;
